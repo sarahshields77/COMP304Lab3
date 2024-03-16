@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/assignment_background"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="70dp"
+            android:src="@drawable/college_logo"
+            android:contentDescription="@string/collegelogo"
+            />
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/person_circle"
+            android:contentDescription="@string/personIcon"
+            />
+
+
+        <Button
+            android:id="@+id/updatePageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/updatepatientbutton"
+            android:textColor="#666666"
+            android:padding="18dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="159dp"
+            tools:layout_editor_absoluteY="580dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077404053232",
+    "project_id": "sarahshields-comp304lab3",
+    "storage_bucket": "sarahshields-comp304lab3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077404053232:android:e10ff8aedd87794a39dc35",
+        "android_client_info": {
+          "package_name": "com.sarah.sarahshields_comp304lab3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhqkQcFkCB0uRp9xdHYFXW4X-V1ms4JM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">sarahshields_COMP304Lab3</string>
+    <string name="loginbuttonlabel">Login</string>
+    <string name="enterusername">User Name</string>
+    <string name="registerbuttonlabel">Register</string>
+    <string name="enterpassword">Password</string>
+    <string name="namedisplaytext">Name</string>
+    <string name="personIcon">Person Icon</string>
+    <string name="collegelogo">Centennial College Logo</string>
+    <string name="enternurseID">Nurse ID</string>
+    <string name="enterpatientID">Patient ID</string>
+    <string name="enterfirstname">First Name</string>
+    <string name="enterlastname">Last Name</string>
+    <string name="enterdepartment">Department</string>
+    <string name="enterroomnumber">Room Number</string>
+    <string name="addpatientbutton">Add Patient</string>
+    <string name="viewpatientbutton">View Patient</string>
+    <string name="updatepatientbutton">Update Patient</string>
+    <string name="addpatienttestbutton">Add Test</string>
+    <string name="viewpatienttestsbutton">View Tests</string>
+    <string name="backtopatientdetailsbutton">Back To Patient</string>
+    <string name="backtopatientmenubutton">Back To Patient Menu</string>
+    <string name="entertestIDinput">Test ID</string>
+    <string name="bpl">BPL</string>
+    <string name="bph">BPH</string>
+    <string name="temperatureinput">Temperature</string>
+    <string name="patientID">Patient ID</string>
+    <string name="patientname">Patient Name</string>
+    <string name="patientdepartment">Patient Department</string>
+    <string name="patientnurse">Patient Nurse</string>
+    <string name="patientroom">Patient Room</string>
+</resources>
