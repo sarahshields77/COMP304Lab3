@@ -29,12 +29,79 @@
             android:contentDescription="@string/personIcon"
             />
 
+        <!-- EditTexts for patient details -->
+        <EditText
+            android:id="@+id/patientIDInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/enterpatientID"
+            android:textColorHint="@color/hintgray"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="18dp"/>
+        <EditText
+            android:id="@+id/patientLastNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/enterlastname"
+            android:textColorHint="@color/hintgray"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="18dp"/>
+        <EditText
+            android:id="@+id/patientFirstNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/enterfirstname"
+            android:textColorHint="@color/hintgray"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="18dp"/>
+        <EditText
+            android:id="@+id/patientDepartmentInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/enterdepartment"
+            android:textColorHint="@color/hintgray"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="18dp"/>
+        <EditText
+            android:id="@+id/patientNurseIDInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/patientnurse"
+            android:textColorHint="@color/hintgray"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="18dp"/>
+        <EditText
+            android:id="@+id/patientRoomNumberInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/enterroomnumber"
+            android:textColorHint="@color/hintgray"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="18dp"/>
 
         <Button
             android:id="@+id/updatePageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="12dp"
             android:backgroundTint="@color/white"
             android:text="@string/updatepatientbutton"
             android:textColor="#666666"

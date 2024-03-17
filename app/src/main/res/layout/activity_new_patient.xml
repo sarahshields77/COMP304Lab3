@@ -38,11 +38,11 @@
             >
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/testIDInput"
+            android:id="@+id/patientIDInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/entertestIDinput"
+            android:hint="@string/enterpatientID"
             android:textColorHint="@color/hintgray"
             android:textColor="@color/white"
             tools:layout_editor_absoluteY="325dp"
@@ -58,11 +58,11 @@
             tools:layout_editor_absoluteY="428dp">
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/patientTestIDInput"
+            android:id="@+id/patientFirstNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/enterpatientID"
+            android:hint="@string/enterfirstname"
             android:textColorHint="@color/hintgray"
             android:textColor="@color/gray"
             tools:layout_editor_absoluteY="374dp"
@@ -79,11 +79,11 @@
             >
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/testNurseIDInput"
+            android:id="@+id/patientLastNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/enternurseID"
+            android:hint="@string/enterlastname"
             android:textColorHint="@color/hintgray"
             android:textColor="@color/white"
             tools:layout_editor_absoluteY="325dp"
@@ -99,11 +99,11 @@
             tools:layout_editor_absoluteY="428dp">
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/BPLInput"
+            android:id="@+id/patientDepartmentInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/bpl"
+            android:hint="@string/enterdepartment"
             android:textColorHint="@color/hintgray"
             android:textColor="@color/gray"
             tools:layout_editor_absoluteY="374dp"
@@ -112,11 +112,11 @@
             android:padding="18dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/BPHInput"
+            android:id="@+id/patientNurseIDInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/bph"
+            android:hint="@string/enternurseID"
             android:textColorHint="@color/hintgray"
             android:textColor="@color/gray"
             tools:layout_editor_absoluteY="374dp"
@@ -125,11 +125,11 @@
             android:padding="18dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/temperatureInput"
+            android:id="@+id/patientRoomNumberInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/temperatureinput"
+            android:hint="@string/enterroomnumber"
             android:textColorHint="@color/hintgray"
             android:textColor="@color/gray"
             tools:layout_editor_absoluteY="374dp"
@@ -138,12 +138,12 @@
             android:padding="18dp"/>
 
         <Button
-            android:id="@+id/addNewTestButton"
+            android:id="@+id/addNewPatientButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/white"
-            android:text="@string/addpatienttestbutton"
+            android:text="@string/addpatientbutton"
             android:textColor="#666666"
             android:padding="13dp"
             android:textSize="17sp"

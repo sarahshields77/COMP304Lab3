@@ -24,7 +24,7 @@ class PatientMenuActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.patientRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         patients = mutableListOf()
-        adapter = PatientAdapter(patients)
+        adapter = PatientAdapter(patients, isNameOnly = true) // pass isNameOnly parameter
 
         recyclerView.adapter = adapter
 
@@ -64,7 +64,13 @@ class PatientMenuActivity : AppCompatActivity() {
 
         val viewpatientbutton = findViewById<Button>(R.id.viewPatientButton)
         viewpatientbutton.setOnClickListener {
-            val intent = Intent(this, PatientDetailsActivity::class.java)
+            // get the selected patient's name
+            val selectedPatientName = patients[recyclerView.getChildAdapterPosition(it)].firstName
+
+
+            val intent = Intent(this, PatientDetailsActivity::class.java).apply {
+                putExtra("selectedPatientName", selectedPatientName)
+            }
             startActivity(intent)
         }
     }

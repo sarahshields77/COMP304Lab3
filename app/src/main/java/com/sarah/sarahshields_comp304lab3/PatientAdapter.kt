@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PatientAdapter(private val patients: List<Patient>) :
+class PatientAdapter(private val patients: List<Patient>, private val isNameOnly: Boolean) :
     RecyclerView.Adapter<PatientAdapter.PatientViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatientViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_patient, parent, false)
+        val layoutResId = if (isNameOnly) R.layout.item_patient_name else R.layout.item_patient_details
+        val view = LayoutInflater.from(parent.context).inflate(layoutResId, parent, false)
         return PatientViewHolder(view)
     }
 
@@ -25,20 +25,26 @@ class PatientAdapter(private val patients: List<Patient>) :
     }
 
     inner class PatientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // Initialize TextView variables
-        private val patientIDTextView: TextView = itemView.findViewById(R.id.patientIDTextView)
-        private val patientNameTextView: TextView = itemView.findViewById(R.id.patientNameTextView)
-        private val patientDepartmentTextView: TextView = itemView.findViewById(R.id.patientDepartmentTextView)
-        private val patientNurseTextView: TextView = itemView.findViewById(R.id.patientNurseTextView)
-        private val patientRoomTextView: TextView = itemView.findViewById(R.id.patientRoomTextView)
-
         fun bind(patient: Patient) {
-            // Bind patient data to UI elements in the item layout
-            patientIDTextView.text = "${patient.patientId}"
-            patientNameTextView.text = "${patient.firstName} ${patient.lastName}"
-            patientDepartmentTextView.text = "${patient.department}"
-            patientNurseTextView.text = "${patient.nurseId}"
-            patientRoomTextView.text = "${patient.room}"
+            if (isNameOnly) {
+                // Bind only the patient name
+                val patientNameTextView = itemView.findViewById<TextView>(R.id.patientNameTextView)
+                patientNameTextView.text = "${patient.firstName} ${patient.lastName}"
+            } else {
+                // Bind full patient details
+                val patientIDTextView = itemView.findViewById<TextView>(R.id.patientIDTextView)
+                val patientNameTextView = itemView.findViewById<TextView>(R.id.patientNameTextView)
+                val patientDepartmentTextView = itemView.findViewById<TextView>(R.id.patientDepartmentTextView)
+                val patientNurseTextView = itemView.findViewById<TextView>(R.id.patientNurseTextView)
+                val patientRoomTextView = itemView.findViewById<TextView>(R.id.patientRoomTextView)
+
+                patientIDTextView.text = "${patient.patientId}"
+                patientNameTextView.text = "${patient.firstName} ${patient.lastName}"
+                patientDepartmentTextView.text = "${patient.department}"
+                patientNurseTextView.text = "${patient.nurseId}"
+                patientRoomTextView.text = "${patient.room}"
+            }
         }
     }
 }
+
