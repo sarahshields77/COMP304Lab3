@@ -68,22 +68,23 @@ class PatientDetailsActivity : AppCompatActivity() {
     }
     private fun updateTextViews(patient: Patient) {
 
-        val patientIDTextView = findViewById<TextView>(R.id.patientIDTextView)
-        patientIDTextView.text = patient.patientId
+        val patientIDTextView = findViewById<TextView>(R.id.patientIDTextViewDetails)
+        patientIDTextView.text = patient.patientId ?: ""
 
-        val patientFirstNameTextView = findViewById<TextView>(R.id.patientFirstNameTextView)
-        patientFirstNameTextView.text = patient.firstName
+        val patientFirstNameTextView = findViewById<TextView>(R.id.patientFirstNameTextViewDetails)
+        patientFirstNameTextView.text = patient.firstName ?: ""
 
-        val patientLastNameTextView = findViewById<TextView>(R.id.patientLastNameTextView)
-        patientLastNameTextView.text = patient.lastName
+        val patientLastNameTextView = findViewById<TextView>(R.id.patientLastNameTextViewDetails)
+        patientLastNameTextView.text = patient.lastName ?: ""
 
-        val patientDepartmentTextView = findViewById<TextView>(R.id.patientDepartmentTextView)
-        patientDepartmentTextView.text = patient.department
+        val patientDepartmentTextView = findViewById<TextView>(R.id.patientDepartmentTextViewDetails)
+        patientDepartmentTextView.text = patient.department ?: ""
 
-        val patientNurseTextView = findViewById<TextView>(R.id.patientNurseTextView)
-        patientNurseTextView.text = patient.nurseId
+        val patientNurseTextView = findViewById<TextView>(R.id.patientNurseTextViewDetails)
+        patientNurseTextView.text = patient.nurseId ?: ""
 
-        val patientRoomNumberTextView = findViewById<TextView>(R.id.patientRoomTextView)
-        patientRoomNumberTextView.text = patient.room
+        val patientRoomNumberTextView = findViewById<TextView>(R.id.patientRoomTextViewDetails)
+        patientRoomNumberTextView.text = patient.room ?: ""
     }
+
 }

@@ -28,42 +28,42 @@
             android:contentDescription="@string/personIcon"
             />
         <TextView
-            android:id="@+id/patientIDTextView"
+            android:id="@+id/patientIDTextViewDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
             android:text="@string/enterpatientID" />
         <TextView
-            android:id="@+id/patientFirstNameTextView"
+            android:id="@+id/patientFirstNameTextViewDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
             android:text="@string/enterfirstname" />
         <TextView
-            android:id="@+id/patientLastNameTextView"
+            android:id="@+id/patientLastNameTextViewDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
             android:text="@string/enterlastname" />
         <TextView
-            android:id="@+id/patientDepartmentTextView"
+            android:id="@+id/patientDepartmentTextViewDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
             android:text="@string/enterdepartment" />
         <TextView
-            android:id="@+id/patientNurseTextView"
+            android:id="@+id/patientNurseTextViewDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
             android:text="@string/patientnurse" />
         <TextView
-            android:id="@+id/patientRoomNumberTextView"
+            android:id="@+id/patientRoomTextViewDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"

@@ -3,7 +3,7 @@ package com.sarah.sarahshields_comp304lab3
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Adapter
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +12,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.sarah.sarahshields_comp304lab3.PatientAdapter
+import com.sarah.sarahshields_comp304lab3.PatientAdapter.OnItemClickListener
+
 
 class PatientMenuActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
@@ -27,11 +30,10 @@ class PatientMenuActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         patients = mutableListOf()
         adapter = PatientAdapter(patients, isNameOnly = true).apply {
-            setOnItemClickListener(object : PatientAdapter.OnItemClickListener {
-                override fun onItemClick(position: Int) {
-                    selectedPatientPosition = position
-                }
-            })
+            setOnItemClickListener { position ->
+                selectedPatientPosition = position
+                adapter.notifyDataSetChanged()
+            }
         }
 
         recyclerView.adapter = adapter
@@ -67,14 +69,22 @@ class PatientMenuActivity : AppCompatActivity() {
 
         val viewpatientbutton = findViewById<Button>(R.id.viewPatientButton)
         viewpatientbutton.setOnClickListener {
+            Log.d("PatientMenuActivity", "selectedPatientPosition: $selectedPatientPosition")  // log position
             if (selectedPatientPosition != -1) {
-                val selectedPatientName = patients[selectedPatientPosition].firstName
-                val intent = Intent(this, PatientDetailsActivity::class.java).apply {
-                    putExtra("selectedPatientName", selectedPatientName)}
+                val selectedPatientName = patients?.get(selectedPatientPosition)?.firstName
+                Log.d("PatientMenuActivity", "selectedPatientName: $selectedPatientName") // log name
+
+                if (selectedPatientName != null) {
+                    val intent = Intent(this, PatientDetailsActivity::class.java).apply {
+                        putExtra("selectedPatientName", selectedPatientName)
+                    }
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Please select a patient", Toast.LENGTH_SHORT).show()
+                }
             } else {
                 Toast.makeText(this, "Please select a patient", Toast.LENGTH_SHORT).show()
-                }
-            startActivity(intent)
+            }
         }
     }
 }
