@@ -27,13 +27,48 @@
             android:src="@drawable/person_circle"
             android:contentDescription="@string/personIcon"
             />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/patientDetailsRecyclerView"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/patientIDTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp" />
-
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/enterpatientID" />
+        <TextView
+            android:id="@+id/patientFirstNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/enterfirstname" />
+        <TextView
+            android:id="@+id/patientLastNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/enterlastname" />
+        <TextView
+            android:id="@+id/patientDepartmentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/enterdepartment" />
+        <TextView
+            android:id="@+id/patientNurseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/patientnurse" />
+        <TextView
+            android:id="@+id/patientRoomNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/enterroomnumber" />
         <Button
             android:id="@+id/updatePatientButton"
             android:layout_width="wrap_content"

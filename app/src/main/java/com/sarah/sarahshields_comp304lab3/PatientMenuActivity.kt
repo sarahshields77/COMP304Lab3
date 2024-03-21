@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Adapter
 import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
@@ -16,6 +17,7 @@ class PatientMenuActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: PatientAdapter
     private lateinit var patients: MutableList<Patient>
+    private var selectedPatientPosition = -1 // initialize with default of no selection
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,15 +26,18 @@ class PatientMenuActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.patientRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         patients = mutableListOf()
-        adapter = PatientAdapter(patients, isNameOnly = true) // pass isNameOnly parameter
+        adapter = PatientAdapter(patients, isNameOnly = true).apply {
+            setOnItemClickListener(object : PatientAdapter.OnItemClickListener {
+                override fun onItemClick(position: Int) {
+                    selectedPatientPosition = position
+                }
+            })
+        }
 
         recyclerView.adapter = adapter
 
-        // TODO: Assuming you have a reference to your Firebase database
+        val nurseId = intent.getStringExtra("nurseId") ?: ""
         val databaseReference = FirebaseDatabase.getInstance().reference
-
-        // TODO: Assuming nurseId is obtained from somewhere (e.g., login)
-        val nurseId = "123" // Replace with actual nurseId retrieval
 
         // Query patients based on nurseId
         val query = databaseReference.child("patients").orderByChild("nurseId").equalTo(nurseId)
@@ -47,10 +52,8 @@ class PatientMenuActivity : AppCompatActivity() {
                         patients.add(it)
                     }
                 }
-
                 adapter.notifyDataSetChanged()
             }
-
             override fun onCancelled(databaseError: DatabaseError) {
                 // Handle error
             }
@@ -64,13 +67,13 @@ class PatientMenuActivity : AppCompatActivity() {
 
         val viewpatientbutton = findViewById<Button>(R.id.viewPatientButton)
         viewpatientbutton.setOnClickListener {
-            // get the selected patient's name
-            val selectedPatientName = patients[recyclerView.getChildAdapterPosition(it)].firstName
-
-
-            val intent = Intent(this, PatientDetailsActivity::class.java).apply {
-                putExtra("selectedPatientName", selectedPatientName)
-            }
+            if (selectedPatientPosition != -1) {
+                val selectedPatientName = patients[selectedPatientPosition].firstName
+                val intent = Intent(this, PatientDetailsActivity::class.java).apply {
+                    putExtra("selectedPatientName", selectedPatientName)}
+            } else {
+                Toast.makeText(this, "Please select a patient", Toast.LENGTH_SHORT).show()
+                }
             startActivity(intent)
         }
     }

@@ -8,22 +8,25 @@ import androidx.recyclerview.widget.RecyclerView
 
 class PatientAdapter(private val patients: List<Patient>, private val isNameOnly: Boolean) :
     RecyclerView.Adapter<PatientAdapter.PatientViewHolder>() {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatientViewHolder {
         val layoutResId = if (isNameOnly) R.layout.item_patient_name else R.layout.item_patient_details
         val view = LayoutInflater.from(parent.context).inflate(layoutResId, parent, false)
         return PatientViewHolder(view)
     }
-
     override fun onBindViewHolder(holder: PatientViewHolder, position: Int) {
         val patient = patients[position]
         holder.bind(patient)
     }
-
     override fun getItemCount(): Int {
         return patients.size
     }
-
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+    private var listener: OnItemClickListener? = null
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.listener = listener
+    }
     inner class PatientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(patient: Patient) {
             if (isNameOnly) {
@@ -43,6 +46,10 @@ class PatientAdapter(private val patients: List<Patient>, private val isNameOnly
                 patientDepartmentTextView.text = "${patient.department}"
                 patientNurseTextView.text = "${patient.nurseId}"
                 patientRoomTextView.text = "${patient.room}"
+
+                itemView.setOnClickListener {
+                    listener?.onItemClick(adapterPosition)
+                }
             }
         }
     }
