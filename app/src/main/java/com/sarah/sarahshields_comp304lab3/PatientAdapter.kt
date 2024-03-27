@@ -26,6 +26,7 @@ class PatientAdapter(private val patients: List<Patient>, private val isNameOnly
     interface OnItemClickListener {
         operator fun invoke(position: Int) : Unit
     }
+
     private var listener: ((Int) -> Unit)? = null
     fun setOnItemClickListener(listener: (position: Int) -> Unit) {
         this.listener = listener
@@ -59,4 +60,5 @@ class PatientAdapter(private val patients: List<Patient>, private val isNameOnly
         }
     }
 }
+
 

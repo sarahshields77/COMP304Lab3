@@ -1,19 +1,20 @@
 package com.sarah.sarahshields_comp304lab3
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.sarah.sarahshields_comp304lab3.PatientAdapter
-import com.sarah.sarahshields_comp304lab3.PatientAdapter.OnItemClickListener
 
 
 class PatientMenuActivity : AppCompatActivity() {
@@ -39,6 +40,7 @@ class PatientMenuActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         val nurseId = intent.getStringExtra("nurseId") ?: ""
+        Log.d("PatientMenuActivity", "Received nurseId: $nurseId")
         val databaseReference = FirebaseDatabase.getInstance().reference
 
         // Query patients based on nurseId
@@ -69,14 +71,14 @@ class PatientMenuActivity : AppCompatActivity() {
 
         val viewpatientbutton = findViewById<Button>(R.id.viewPatientButton)
         viewpatientbutton.setOnClickListener {
-            Log.d("PatientMenuActivity", "selectedPatientPosition: $selectedPatientPosition")  // log position
+
             if (selectedPatientPosition != -1) {
                 val selectedPatientName = patients?.get(selectedPatientPosition)?.firstName
-                Log.d("PatientMenuActivity", "selectedPatientName: $selectedPatientName") // log name
 
                 if (selectedPatientName != null) {
                     val intent = Intent(this, PatientDetailsActivity::class.java).apply {
                         putExtra("selectedPatientName", selectedPatientName)
+                        putExtra("nurseId", nurseId) // Pass the stored nurseId added mar 27 10:06
                     }
                     startActivity(intent)
                 } else {

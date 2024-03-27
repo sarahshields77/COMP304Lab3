@@ -4,7 +4,7 @@ data class Test(
     val testId: String? = "",
     val patientId: String? = "",
     val nurseId: String? = "",
-    val BPL: String? = "",
-    val BPH: String? = "",
+    val bpl: String? = "",
+    val bph: String? = "",
     val temperature: String? = ""
 )

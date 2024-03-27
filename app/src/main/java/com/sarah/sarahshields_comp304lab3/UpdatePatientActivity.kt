@@ -38,7 +38,6 @@ class UpdatePatientActivity : AppCompatActivity() {
         val updatePageButton = findViewById<Button>(R.id.updatePageButton)
         updatePageButton.setOnClickListener {
             // retrieve updated details from EditTexts
-            val updatePatientId = patientIDInput.text.toString()
             val updateFirstName = patientFirstNameInput.text.toString()
             val updateLastName = patientLastNameInput.text.toString()
             val updateDepartment = patientDepartmentInput.text.toString()
@@ -47,8 +46,8 @@ class UpdatePatientActivity : AppCompatActivity() {
 
             // get reference to the specific patient in the database using PatientID
             val databaseReference = FirebaseDatabase.getInstance().reference
-            val patientReference = databaseReference.child("patients").child(updatePatientId)
-            
+            val patientReference = databaseReference.child("patients").child(patientId!!)
+
             // update the patient's details
             patientReference.child("firstName").setValue(updateFirstName)
             patientReference.child("lastName").setValue(updateLastName)

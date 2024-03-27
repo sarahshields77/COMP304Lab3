@@ -29,4 +29,5 @@
     <string name="patientdepartment">Patient Department</string>
     <string name="patientnurse">Patient Nurse</string>
     <string name="patientroom">Patient Room</string>
+    <string name="testID">Test ID</string>
 </resources>

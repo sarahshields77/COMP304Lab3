@@ -48,12 +48,10 @@ class NewPatientActivity : AppCompatActivity() {
                 nurseId = nurseId,
                 room = room
             )
-            //TODO: if no info entered need to be able to exit/error message
 
             // push the new patient to the database
             val databaseReference = FirebaseDatabase.getInstance().reference
-            val newPatientReference = databaseReference.child("patients").push()
-            newPatientReference.setValue(newPatient)
+            databaseReference.child("patients").child(patientId).setValue(newPatient)
 
             Toast.makeText(this, "Patient Added", Toast.LENGTH_SHORT).show()
 
