@@ -12,18 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
         <ImageView
             android:layout_width="220dp"
-            android:layout_height="70dp"
+            android:layout_height="100dp"
             android:src="@drawable/college_logo"
             android:contentDescription="@string/collegelogo"
             />
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_marginTop="32dp"
-            android:src="@drawable/person_circle"
+            android:src="@drawable/medical_records_svgrepo_com"
             android:contentDescription="@string/personIcon"
             />
         <androidx.recyclerview.widget.RecyclerView
@@ -34,12 +35,12 @@
             android:visibility="visible" />
         <Button
             android:id="@+id/backToPatientDetailsButton"
-            android:layout_width="wrap_content"
+            android:layout_width="180sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/offwhite"
             android:text="@string/backtopatientdetailsbutton"
-            android:textColor="#666666"
+            android:textColor="@color/gray"
             android:padding="12dp"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="159dp"

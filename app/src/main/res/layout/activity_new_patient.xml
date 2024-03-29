@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,27 +8,25 @@
     android:gravity="center"
     android:padding="16dp"
     tools:context=".MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical">
-
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
         <ImageView
             android:layout_width="200dp"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:src="@drawable/college_logo"
             android:contentDescription="@string/collegelogo"
             />
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_marginTop="16dp"
-            android:src="@drawable/person_circle"
+            android:src="@drawable/user_injured_svgrepo_com"
             android:contentDescription="@string/personIcon"
             />
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="match_parent"
@@ -43,13 +41,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/enterpatientID"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/white"
             tools:layout_editor_absoluteY="325dp"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"/>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
             android:layout_width="match_parent"
@@ -61,36 +58,33 @@
             android:id="@+id/patientFirstNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:hint="@string/enterfirstname"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/gray"
             tools:layout_editor_absoluteY="374dp"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"/>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="313dp"
-            >
+            tools:layout_editor_absoluteY="313dp">
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/patientLastNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:hint="@string/enterlastname"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/white"
             tools:layout_editor_absoluteY="325dp"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"/>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout4"
             android:layout_width="match_parent"
@@ -102,56 +96,50 @@
             android:id="@+id/patientDepartmentInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:hint="@string/enterdepartment"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/gray"
             tools:layout_editor_absoluteY="374dp"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"/>
-
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/patientNurseIDInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/enternurseID"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/gray"
             tools:layout_editor_absoluteY="374dp"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"/>
-
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/patientRoomNumberInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:hint="@string/enterroomnumber"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/gray"
             tools:layout_editor_absoluteY="374dp"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"/>
-
         <Button
             android:id="@+id/addNewPatientButton"
-            android:layout_width="wrap_content"
+            android:layout_width="180sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/offwhite"
             android:text="@string/addpatientbutton"
-            android:textColor="#666666"
+            android:textColor="@color/gray"
             android:padding="13dp"
             android:textSize="17sp"
             tools:layout_editor_absoluteX="159dp"
             tools:layout_editor_absoluteY="580dp"
             />
-
-
     </LinearLayout>
-
 </RelativeLayout>

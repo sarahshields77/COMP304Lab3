@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,16 +7,14 @@
     android:gravity="center"
     android:padding="16dp"
     tools:context=".MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical">
-
         <ImageView
             android:layout_width="220dp"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:src="@drawable/college_logo"
             android:contentDescription="@string/collegelogo"
             />
@@ -25,18 +22,16 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginTop="32dp"
-            android:src="@drawable/person_circle"
+            android:src="@drawable/user_injured_svgrepo_com"
             android:contentDescription="@string/personIcon"
             />
-
-        <!-- EditTexts for patient details -->
         <EditText
             android:id="@+id/patientIDInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/enterpatientID"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
@@ -45,9 +40,9 @@
             android:id="@+id/patientLastNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:hint="@string/enterlastname"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
@@ -56,9 +51,9 @@
             android:id="@+id/patientFirstNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:hint="@string/enterfirstname"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
@@ -67,9 +62,9 @@
             android:id="@+id/patientDepartmentInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:hint="@string/enterdepartment"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
@@ -78,9 +73,9 @@
             android:id="@+id/patientNurseIDInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:hint="@string/patientnurse"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
@@ -89,28 +84,25 @@
             android:id="@+id/patientRoomNumberInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:hint="@string/enterroomnumber"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"/>
-
         <Button
             android:id="@+id/updatePageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/offwhite"
             android:text="@string/updatepatientbutton"
-            android:textColor="#666666"
+            android:textColor="@color/gray"
             android:padding="18dp"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="159dp"
             tools:layout_editor_absoluteY="580dp"
             />
-
     </LinearLayout>
-
 </RelativeLayout>

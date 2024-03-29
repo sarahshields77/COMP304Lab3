@@ -19,7 +19,7 @@
     <string name="addpatienttestbutton">Add Test</string>
     <string name="viewpatienttestsbutton">View Tests</string>
     <string name="backtopatientdetailsbutton">Back To Patient</string>
-    <string name="backtopatientmenubutton">Back To Patient Menu</string>
+    <string name="backtopatientmenubutton">Back To Patients</string>
     <string name="entertestIDinput">Test ID</string>
     <string name="bpl">BPL</string>
     <string name="bph">BPH</string>

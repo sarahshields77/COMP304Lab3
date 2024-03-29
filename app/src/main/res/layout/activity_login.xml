@@ -8,27 +8,25 @@
     android:gravity="center"
     android:padding="16dp"
     tools:context=".MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical">
-
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
         <ImageView
-            android:layout_width="220dp"
-            android:layout_height="70dp"
+            android:layout_width="300dp"
+            android:layout_height="140dp"
             android:src="@drawable/college_logo"
             android:contentDescription="@string/collegelogo"
             />
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
             android:layout_marginTop="32dp"
-            android:src="@drawable/person_circle"
             android:contentDescription="@string/personIcon"
-            />
-
+            android:src="@drawable/nurse"
+            tools:ignore="ImageContrastCheck" />
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="match_parent"
@@ -37,19 +35,22 @@
             tools:layout_editor_absoluteY="313dp"
             >
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/userNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="25sp"
             android:layout_marginTop="32dp"
-            android:hint="@string/enterusername"
-            android:textColorHint="@color/hintgray"
-            android:textColor="@color/white"
-            tools:layout_editor_absoluteY="325dp"
-            android:textSize="20sp"
+            android:layout_marginEnd="25sp"
             android:background="@drawable/rounded_corner"
-            android:padding="18dp"/>
-
+            android:hint="@string/enterusername"
+            android:padding="18dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/offwhite"
+            android:textSize="20sp"
+            tools:ignore="TextContrastCheck"
+            tools:layout_editor_absoluteY="325dp" />
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
             android:layout_width="match_parent"
@@ -62,29 +63,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="25sp"
+            android:layout_marginStart="25sp"
             android:hint="@string/enterpassword"
-            android:textColorHint="@color/hintgray"
+            android:textColorHint="@color/offwhite"
             android:textColor="@color/gray"
             tools:layout_editor_absoluteY="374dp"
             android:textSize="20sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"/>
-
         <Button
             android:id="@+id/loginPageButton"
-            android:layout_width="wrap_content"
+            android:layout_width="180sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/offwhite"
             android:text="@string/loginbuttonlabel"
-            android:textColor="#666666"
+            android:textColor="@color/gray"
             android:padding="18dp"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="159dp"
             tools:layout_editor_absoluteY="580dp"
             />
-
-
     </LinearLayout>
-
 </RelativeLayout>
